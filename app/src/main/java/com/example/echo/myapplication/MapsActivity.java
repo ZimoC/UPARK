@@ -40,6 +40,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import android.speech.tts.TextToSpeech;
+
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -133,20 +135,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         Intent newActivity2 = new Intent(MapsActivity.this, space2.class);
                         startActivity(newActivity2);
                         break;
-                /*    case 2:
+                    case 2:
                         Intent newActivity3 = new Intent(MapsActivity.this, space3.class);
                         startActivity(newActivity3);
                         break;
                          case 3:
                         Intent newActivity4 = new Intent(MapsActivity.this, space4.class);
                         startActivity(newActivity4);
-                        break;*/
+                        break;
                 }
-                String words = adapter.getItem(position).toString();
 
-                addToSpeech(words);
             }
 
+        });
+
+    //Initialize Text to Speech engine (context, listener object)
+        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status != TextToSpeech.ERROR) {
+                    tts.setLanguage(Locale.US);
+                }
+            }
         });
 
     }
@@ -204,10 +214,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         );
 
     }
+    // set search function to button
+
     public void onSearch(View view) {
 
         EditText location_tf = (EditText) findViewById(R.id.searchET);
         String location = location_tf.getText().toString();
+        tts.speak(location, TextToSpeech.QUEUE_FLUSH, null);
         List<android.location.Address> addressList = null;
         if (location != null || !location.equals("")) {
             Geocoder geocoder = new Geocoder(this);
@@ -226,18 +239,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    //-------------
-    public void addToSpeech(String str) {
-        tts.speak(str, TextToSpeech.QUEUE_FLUSH, null);
-    }
 
-    protected void onPause() {
-        // shut down TextToSpeech
-        if(tts != null){
+    // on destroy
+    public void onDestroy(){
+        // shut down TTS engine
+
+        if(tts !=null){
             tts.stop();
             tts.shutdown();
         }
-        super.onPause();
+        super.onDestroy();
     }
 
     //Add option menu
