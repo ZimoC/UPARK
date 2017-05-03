@@ -22,6 +22,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
@@ -49,12 +50,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final LatLng p2 = new LatLng(42.386396, -71.225954);
     private static final LatLng p3 = new LatLng(42.366146, -71.228616);
 
-    private static final String addr = "175 Forest Street";
-    private static final String addr1 = "1-99 Cedar Hill Ln, Waltham";
-    private static final String addr2 = "16 Forest Street";
+    private static final String addr = "175 Forest Street, Waltham, MA02452";
+    private static final String addr1 = "1-99 Cedar Hill Ln, Waltham, MA02452";
+    private static final String addr2 = "16 Forest Street, Waltham, MA02452";
     private static final String addr3 = "196 High St, Waltham";
 
-    String addList[] = {"1-99 Cedar Hill Ln, Waltham", "16 Forest Street", "196 High St, Waltham"};
+    String addList[] = {addr,addr1, addr2, addr3};
 
 
     private static final float zoom = 14.0f;
@@ -120,6 +121,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
 
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                switch (position) {
+                    case 0:
+                        Intent newActivity1 = new Intent(MapsActivity.this, space1.class);
+                        startActivity(newActivity1);
+                        break;
+                    case 1:
+                        Intent newActivity2 = new Intent(MapsActivity.this, space2.class);
+                        startActivity(newActivity2);
+                        break;
+                /*    case 2:
+                        Intent newActivity3 = new Intent(MapsActivity.this, olympiakos.class);
+                        startActivity(newActivity3);
+                        break;*/
+                }
+            }
+
+        });
     }
 
 
