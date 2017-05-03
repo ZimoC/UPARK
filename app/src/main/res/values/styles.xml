@@ -3,8 +3,8 @@
     <style name="demoStyle">
         <item name="android:textColor">#428ff4</item>
         <item name="android:background">#bac4d3</item>
-        <item name="android:textSize">14dp</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_margin">5dp</item>
         <item name="android:paddingBottom">2dp</item>
 
 

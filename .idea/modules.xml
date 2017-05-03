@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UPARK.iml" filepath="$PROJECT_DIR$/UPARK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UPARK0502-map.iml" filepath="$PROJECT_DIR$/UPARK0502-map.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

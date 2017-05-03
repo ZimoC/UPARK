@@ -66,7 +66,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final String addr = "175 Forest Street, Waltham, MA02452";
     private static final String addr1 = "1-99 Cedar Hill Ln, Waltham, MA02452";
     private static final String addr2 = "16 Forest Street, Waltham, MA02452";
-    private static final String addr3 = "196 High St, Waltham";
+    private static final String addr3 = "196 High St, Waltham, MA02453";
 
     String addList[] = {addr,addr1, addr2, addr3};
 
@@ -157,7 +157,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         startActivity(newActivity4);
                         break;
                 }
-
             }
 
         });
@@ -248,13 +247,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
         );
 
-        mMap.setOnMapLongClickListener(
-                new GoogleMap.OnMapLongClickListener() {
-                    public void onMapLongClick(LatLng point) {
-                        Toast.makeText(getApplicationContext(), "Long Tap", Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
 
     }
     // set search function to button
@@ -263,9 +255,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         EditText location_tf = (EditText) findViewById(R.id.searchET);
         String location = location_tf.getText().toString();
+<<<<<<< HEAD
         //set text to speech content
       //  String tospeech=("Searching parking spaces around"+location);
         tts.speak(location, TextToSpeech.QUEUE_FLUSH, null);
+=======
+        String tospeach= ("searching parking spaces around"+location);
+        tts.speak(tospeach, TextToSpeech.QUEUE_FLUSH, null);
+>>>>>>> origin/master
         List<android.location.Address> addressList = null;
         if (location != null || !location.equals("")) {
             Geocoder geocoder = new Geocoder(this);
@@ -287,7 +284,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    // on destroy
+    // on destroy Text to Speech engine
     public void onDestroy(){
         // shut down TTS engine
         super.onDestroy();

@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1-99 Cedar Hill Ln, Waltham MA 02452"
+        android:text="1-99 Cedar Hill Ln, Waltham, MA 02452"
         android:textSize="18sp"
         android:textColor="#13213a"
         android:fontFamily="sans-serif"
@@ -66,7 +66,8 @@
         android:textColor="#13213a"
         android:fontFamily="sans-serif"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"/>
 
 
     <Button
