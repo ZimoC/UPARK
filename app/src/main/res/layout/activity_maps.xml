@@ -15,14 +15,7 @@
             <LinearLayout android:id="@+id/tab1"
                 android:orientation="vertical" android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:map="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:id="@+id/map"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="436dp"
-                    tools:context="com.example.echo.myapplication.MapsActivity" />
+
 
                 <LinearLayout android:orientation="horizontal"
                     android:layout_width="match_parent" android:layout_height="wrap_content">
@@ -44,14 +37,22 @@
                         android:text="Search"
                         android:textSize="14sp" />
                 </LinearLayout>
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context="com.example.echo.myapplication.MapsActivity" />
+
 
             </LinearLayout>
 
             <!--  second tab -->
             <LinearLayout android:id="@+id/tab2"
                 android:orientation="vertical" android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/upark">
+                android:layout_height="match_parent">
 
                 <ListView android:id="@+id/list"
                     android:layout_width="match_parent"
