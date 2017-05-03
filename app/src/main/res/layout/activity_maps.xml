@@ -50,7 +50,8 @@
             <!--  second tab -->
             <LinearLayout android:id="@+id/tab2"
                 android:orientation="vertical" android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/upark">
 
                 <ListView android:id="@+id/list"
                     android:layout_width="match_parent"
@@ -62,7 +63,7 @@
             <!--  third tab -->
            <LinearLayout android:id="@+id/tab3"
                 android:orientation="vertical" android:layout_width="match_parent"
-                android:layout_height="match_parent" android:background="#fffff670">
+                android:layout_height="match_parent" android:background="@drawable/p1">
 
                 <TextView
                     android:layout_width="match_parent"
