@@ -12,6 +12,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -23,7 +25,7 @@ import static com.example.echo.myapplication.Login._pass;
 import static com.example.echo.myapplication.Login._phone;
 
 
-public class profile extends Activity {
+public class profile extends AppCompatActivity {
 
     public TextView name1,phone1,email1,passwd1;
     /**
@@ -33,6 +35,11 @@ public class profile extends Activity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.profile);
+
+        //To hide AppBar for full screen.
+        ActionBar ab = getSupportActionBar();
+        ab.hide();
+
         name1 = (TextView) findViewById(R.id.name);
         phone1 = (TextView) findViewById(R.id.phone);
         email1 = (TextView) findViewById(R.id.email);

@@ -121,12 +121,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         spec.setIndicator("List");              //put text on tab
         tabs.addTab(spec);                     //put tab in TabHost container
 
-   /* Initialize a TabSpec for tab3 and add it to the TabHost */
-        spec = tabs.newTabSpec("tag3");        //create new tab specification
-        spec.setContent(R.id.tab3);            //add view tab content
-        spec.setIndicator("Share");              //put text on tab
-        tabs.addTab(spec);                     //put tab in TabHost container
-
         IntentFilter mainFilter = new IntentFilter("address");
         mReceiver = new MyMainLocalReceiver();
         registerReceiver(mReceiver, mainFilter);
