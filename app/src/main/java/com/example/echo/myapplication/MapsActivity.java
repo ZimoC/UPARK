@@ -59,7 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     String addList[] = {addr,addr1, addr2, addr3};
 
 
-    private static final float zoom = 14.0f;
+    private static final float zoom = 13.0f;
     private TabHost tabs;
     private Button button;
     private TabHost.TabSpec spec;
@@ -143,9 +143,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         startActivity(newActivity4);
                         break;
                 }
-                String words = adapter.getItem(position).toString();
-
-                addToSpeech(words);
             }
 
         });
