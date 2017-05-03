@@ -1,11 +1,4 @@
 
-/* Tip button-- enter check amount, number of people and tip percentage(default is 15%)
-* pushing the go button to calculate total bill, total per person, total tip, and tip per person
-* Web button-- starts WebLookup to browse website
-* Dial button-- automatically dial 781-891-2000
-* Map button-- open google map that display Bentley University's location
-*/
-
 package com.example.echo.myapplication;
 
 import android.app.Activity;
@@ -17,7 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-public class spaceInfo extends Activity implements OnClickListener {
+public class space1 extends Activity implements OnClickListener {
 
 
 
@@ -30,7 +23,7 @@ public class spaceInfo extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        setContentView(R.layout.parkinfo);
+        setContentView(R.layout.space1);
 
 
         // Set up click listeners for all the buttons
