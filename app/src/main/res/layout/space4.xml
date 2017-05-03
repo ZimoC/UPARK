@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="196 High St, Waltham"
+        android:text="196 High St, Waltham, MA02453"
         android:textSize="18sp"
         android:textColor="#13213a"
         android:fontFamily="sans-serif"

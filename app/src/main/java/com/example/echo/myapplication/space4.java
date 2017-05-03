@@ -53,7 +53,7 @@ public class space4 extends Activity implements OnClickListener {
 
             // open built-in google map application which display Bentley's location
             case R.id.map:
-                Uri uri3 = Uri.parse("geo:0,0?q=196 High St, Waltham");
+                Uri uri3 = Uri.parse("geo:0,0?q=196 High St, Waltham, MA 02453");
                 Intent i3 = new Intent(Intent.ACTION_VIEW,uri3);
 
                 /*For API18 and 19 Google Maps is not on Launch Pad so should first check

@@ -66,7 +66,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final String addr = "175 Forest Street, Waltham, MA02452";
     private static final String addr1 = "1-99 Cedar Hill Ln, Waltham, MA02452";
     private static final String addr2 = "16 Forest Street, Waltham, MA02452";
-    private static final String addr3 = "196 High St, Waltham";
+    private static final String addr3 = "196 High St, Waltham, MA02453";
 
     String addList[] = {addr,addr1, addr2, addr3};
 

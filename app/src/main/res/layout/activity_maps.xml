@@ -15,35 +15,38 @@
             <LinearLayout android:id="@+id/tab1"
                 android:orientation="vertical" android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+
+                <LinearLayout android:orientation="horizontal"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <EditText
+
+                        android:id="@+id/searchET"
+                        android:layout_width="219dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="0.39"
+                        android:layout_marginTop="10dp" />
+
+                    <Button
+                        style="@style/demoStyle"
+                        android:id="@+id/searchButton"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="#DCDCDC"
+                        android:onClick="onSearch"
+                        android:text="Search"
+                        android:textSize="14sp" />
+                </LinearLayout>
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:map="http://schemas.android.com/apk/res-auto"
                     xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/map"
                     android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="436dp"
+                    android:layout_height="match_parent"
                     tools:context="com.example.echo.myapplication.MapsActivity" />
-
-                <LinearLayout android:orientation="horizontal"
-                    android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/searchET"
-                        android:layout_width="219dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_weight="0.39"
-                        android:layout_marginTop="5dp" />
-
-                    <Button
-                        android:id="@+id/searchButton"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:background="@android:color/transparent"
-                        android:onClick="onSearch"
-                        android:text="Search"
-                        android:textSize="14sp" />
-                </LinearLayout>
 
             </LinearLayout>
 
