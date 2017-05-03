@@ -1,8 +1,5 @@
 package com.example.echo.myapplication;
 
-/**
- * Created by kikii on 4/23/2017.
- */
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -121,13 +118,15 @@ public class UserArea extends AppCompatActivity {
         return BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage), null, o2);
 
     }
+
+    //create option menu
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
 
 
     }
-
+    //setting option menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Uri uri;
@@ -146,32 +145,29 @@ public class UserArea extends AppCompatActivity {
 
                 return true;
 
-            case R.id.close:
+            case R.id.logout:
                 final AlertDialog.Builder builder = new AlertDialog.Builder(UserArea.this);
                 builder.setTitle("Info");
                 builder.setMessage("Do you want to logout?");
                 builder.setPositiveButton("I am sure!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                         Intent intent = new Intent(UserArea.this,Login.class);
                         startActivity(intent);
-
                         finish();
-
                     }
                 });
-
                 builder.setNegativeButton("Not now", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                         dialogInterface.dismiss();
                     }
                 });
-
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                return true;
+            case R.id.exit:
+                finish();
                 return true;
 
             default:

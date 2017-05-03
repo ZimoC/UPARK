@@ -14,9 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-/**
- * Created by kikii on 4/23/2017.
- */
 
 public class RegisterActivity extends AppCompatActivity {
 

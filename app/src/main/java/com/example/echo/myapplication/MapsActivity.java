@@ -1,6 +1,5 @@
 package com.example.echo.myapplication;
 
-import android.app.ActionBar;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -10,10 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.location.Geocoder;
 import android.net.Uri;
-import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
@@ -32,12 +28,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.identity.intents.Address;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -50,7 +41,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import android.speech.tts.TextToSpeech;
 
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -174,7 +164,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
     }
-
+//set broadcast recevier while searching the location
 
     public class MyMainLocalReceiver extends BroadcastReceiver
     {
@@ -203,7 +193,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         manager.notify(0, builder.build());
 
     }
-
+//set parking locations on maps
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         button = (Button) findViewById(R.id.searchButton);
@@ -225,7 +215,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     public boolean onMarkerClick(Marker m) {
                         String title = m.getSnippet();
                         String snip = m.getSnippet();
-                   //     Toast.makeText(getApplicationContext(), title + "\n" + snip, Toast.LENGTH_LONG).show();
 
                         if (snip.equals(addr)) {
                             Intent newActivity1 = new Intent(MapsActivity.this, space1.class);
@@ -251,7 +240,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setOnMapLongClickListener(
                 new GoogleMap.OnMapLongClickListener() {
                     public void onMapLongClick(LatLng point) {
-                        Toast.makeText(getApplicationContext(), "Long Tap", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -265,8 +254,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         String location = location_tf.getText().toString();
 
         //set text to speech content
-      //  String tospeech=("Searching parking spaces around"+location);
-        tts.speak(location, TextToSpeech.QUEUE_FLUSH, null);
         String tospeach= ("searching parking spaces around"+location);
         tts.speak(tospeach, TextToSpeech.QUEUE_FLUSH, null);
         List<android.location.Address> addressList = null;
@@ -333,36 +320,34 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 return true;
 
-            case R.id.close:
+            case R.id.logout:
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
                 builder.setTitle("Info");
                 builder.setMessage("Do you want to logout?");
                 builder.setPositiveButton("I am sure!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                         Intent intent = new Intent(MapsActivity.this,Login.class);
                         startActivity(intent);
-
                         finish();
-
                     }
                 });
-
                 builder.setNegativeButton("Not now", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                         dialogInterface.dismiss();
                     }
                 });
-
                 AlertDialog dialog = builder.create();
                 dialog.show();
                 return true;
 
+            case R.id.exit:
+                finish();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
+
         }
 
     }
