@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="LOGIN"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:id="@+id/textView"
         android:textColor="#FFFFFF"
         android:layout_marginTop="65dp"
@@ -59,7 +59,7 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:id="@+id/textView2"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="50dp"
             android:layout_alignTop="@+id/textView"
             android:layout_centerHorizontal="true" />
 
@@ -123,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Android | Lollipop | Material | Danna | Zimo | Yushing | Design | Activity | Blog | Facebook | Google | Kitkat | Marshmallow | Google"
+        android:text="Android | Lollipop | Material | Danna | Zimo | Yushing | Design | Activity | Google | Kitkat | Marshmallow "
         android:textColor="#FFFFFF"
         android:alpha="0.6"
         android:id="@+id/textView4"

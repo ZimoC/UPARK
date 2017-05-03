@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#ADFEDC">
 
 
     <TextView
@@ -72,11 +72,15 @@
 
     <Button
         android:id="@+id/map"
+        android:background="@drawable/button"
+        android:textColor="@android:color/white"
         style="@style/demoStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" show On map" />
     <Button
+        android:background="@drawable/button"
+        android:textColor="@android:color/white"
         android:id="@+id/dial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
