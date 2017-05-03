@@ -45,9 +45,9 @@
         <activity   android:name=".MapsActivity"></activity>
         <activity   android:name=".space1"></activity>
         <activity android:name=".UserArea" ></activity>
-
-
-
+        <activity   android:name=".space2"></activity>
+        <activity   android:name=".space3"></activity>
+        <activity   android:name=".space4"></activity>
 
 
         <meta-data

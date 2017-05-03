@@ -46,14 +46,14 @@ public class space4 extends Activity implements OnClickListener {
 
             // open built-in dialer, dials 7818912000
             case R.id.dial:
-                Uri uri2 = Uri.parse("tel:7818912000");
+                Uri uri2 = Uri.parse("tel:6179924433");
                 Intent i2 = new Intent(Intent.ACTION_DIAL,uri2);
                 startActivity(i2);
                 break;
 
             // open built-in google map application which display Bentley's location
             case R.id.map:
-                Uri uri3 = Uri.parse("geo:0,0?q=175 Forest Street, Waltham, MA02452");
+                Uri uri3 = Uri.parse("geo:0,0?q=196 High St, Waltham");
                 Intent i3 = new Intent(Intent.ACTION_VIEW,uri3);
 
                 /*For API18 and 19 Google Maps is not on Launch Pad so should first check
