@@ -25,8 +25,6 @@ import static com.example.echo.myapplication.Login._phone;
 
 public class profile extends Activity {
 
-
-
     public TextView name1,phone1,email1,passwd1;
     /**
      * Called when the activity is first created.

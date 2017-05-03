@@ -336,8 +336,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             case R.id.close:
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
                 builder.setTitle("Info");
-                builder.setMessage("Do you want to logout ?");
-                builder.setPositiveButton("I am sure!", new DialogInterface.OnClickListener() {
+                builder.setMessage("Do you want to logout ??");
+                builder.setPositiveButton("Take me away!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
