@@ -229,6 +229,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     public boolean onMarkerClick(Marker m) {
                         String title = m.getSnippet();
                         String snip = m.getSnippet();
+                   //     Toast.makeText(getApplicationContext(), title + "\n" + snip, Toast.LENGTH_LONG).show();
 
                         if (snip.equals(addr)) {
                             Intent newActivity1 = new Intent(MapsActivity.this, space1.class);
@@ -251,6 +252,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
         );
 
+        mMap.setOnMapLongClickListener(
+                new GoogleMap.OnMapLongClickListener() {
+                    public void onMapLongClick(LatLng point) {
+                        Toast.makeText(getApplicationContext(), "Long Tap", Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
 
     }
     // set search function to button
