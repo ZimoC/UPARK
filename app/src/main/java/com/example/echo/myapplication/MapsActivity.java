@@ -48,12 +48,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final LatLng p2 = new LatLng(42.386396, -71.225954);
     private static final LatLng p3 = new LatLng(42.366146, -71.228616);
 
-    private static final String addr = "175 Forest Street";
-    private static final String addr1 = "1-99 Cedar Hill Ln, Waltham";
-    private static final String addr2 = "16 Forest Street";
+    private static final String addr = "175 Forest Street, Waltham, MA02452";
+    private static final String addr1 = "1-99 Cedar Hill Ln, Waltham, MA02452";
+    private static final String addr2 = "16 Forest Street, Waltham, MA02452";
     private static final String addr3 = "196 High St, Waltham";
 
-    String addList[] = {"1-99 Cedar Hill Ln, Waltham", "16 Forest Street", "196 High St, Waltham"};
+    String addList[] = {addr,addr1, addr2, addr3};
 
 
     private static final float zoom = 14.0f;
