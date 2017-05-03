@@ -23,7 +23,7 @@ public class space2 extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        setContentView(R.layout.space1);
+        setContentView(R.layout.space2);
 
 
         // Set up click listeners for all the buttons
