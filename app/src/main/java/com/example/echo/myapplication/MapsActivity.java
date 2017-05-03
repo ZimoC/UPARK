@@ -1,14 +1,20 @@
 package com.example.echo.myapplication;
 
 import android.app.ActionBar;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.location.Geocoder;
 import android.net.Uri;
+import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -72,12 +78,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private ArrayAdapter adapter;
     private ArrayList<String> list = new ArrayList<>();
 
+    Intent intent = new Intent("address");
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
-
+    BroadcastReceiver mReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +119,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         spec.setIndicator("Share");              //put text on tab
         tabs.addTab(spec);                     //put tab in TabHost container
 
+        IntentFilter mainFilter = new IntentFilter("address");
+        mReceiver = new MyMainLocalReceiver();
+        registerReceiver(mReceiver, mainFilter);
 
         //----------------------
         // Get ListView from XML
@@ -145,10 +155,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         startActivity(newActivity4);
                         break;
                 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
             }
 
         });
@@ -165,6 +172,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+
+    public class MyMainLocalReceiver extends BroadcastReceiver
+    {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String value = intent.getExtras().getString("address");
+            addNotification(value);
+            Log.v("Upark", value);
+        }
+    }
+
+    private void addNotification(String value) {
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.logo)
+                        .setContentTitle("Upark")
+                        .setContentText(value);
+
+        Intent notificationIntent = new Intent(this, MapsActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
+
+    }
 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -240,6 +275,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
             //mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
             mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+            intent.putExtra("address","We are heading to: "+ location);
+            sendBroadcast(intent);
 
         }
     }
@@ -248,12 +285,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // on destroy
     public void onDestroy(){
         // shut down TTS engine
+        super.onDestroy();
 
         if(tts !=null){
             tts.stop();
             tts.shutdown();
         }
-        super.onDestroy();
+        //shut down broadcast receiver
+        try {
+            unregisterReceiver(mReceiver);
+        } catch (Exception e) {
+
+            Log.e ("Register", e.getMessage() );
+        }
     }
 
     //Add option menu
