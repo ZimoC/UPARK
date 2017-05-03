@@ -163,10 +163,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         startActivity(newActivity4);
                         break;
                 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
             }
 
         });
