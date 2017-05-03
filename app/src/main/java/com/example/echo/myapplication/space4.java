@@ -10,7 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-public class space1 extends Activity implements OnClickListener {
+public class space4 extends Activity implements OnClickListener {
 
 
 
@@ -23,7 +23,7 @@ public class space1 extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        setContentView(R.layout.space1);
+        setContentView(R.layout.space4);
 
 
         // Set up click listeners for all the buttons
