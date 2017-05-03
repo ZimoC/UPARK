@@ -134,13 +134,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         startActivity(newActivity2);
                         break;
                 /*    case 2:
-                        Intent newActivity3 = new Intent(MapsActivity.this, olympiakos.class);
+                        Intent newActivity3 = new Intent(MapsActivity.this, space3.class);
                         startActivity(newActivity3);
+                        break;
+                         case 3:
+                        Intent newActivity4 = new Intent(MapsActivity.this, space4.class);
+                        startActivity(newActivity4);
                         break;*/
                 }
+                String words = adapter.getItem(position).toString();
+
+                addToSpeech(words);
             }
 
         });
+
     }
 
 
@@ -167,17 +175,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         Toast.makeText(getApplicationContext(), title + "\n" + snip, Toast.LENGTH_LONG).show();
 
                         if (snip.equals(addr)) {
-                            tabs.setCurrentTabByTag("tag2");
+                            Intent newActivity1 = new Intent(MapsActivity.this, space1.class);
+                            startActivity(newActivity1);
                         }
                         if (snip.equals(addr1)) {
-                            tabs.setCurrentTabByTag("tag2");
+                            Intent newActivity2 = new Intent(MapsActivity.this, space2.class);
+                            startActivity(newActivity2);
                         }
-                        if (snip.equals(addr2)) {
-                            tabs.setCurrentTabByTag("tag2");
+                    /*    if (snip.equals(addr2)) {
+                            Intent newActivity1 = new Intent(MapsActivity.this, space3.class);
+                            startActivity(newActivity1);
                         }
                         if (snip.equals(addr3)) {
-                            tabs.setCurrentTabByTag("tag2");
-                        }
+                            Intent newActivity1 = new Intent(MapsActivity.this, space4.class);
+                            startActivity(newActivity1);
+                        }*/
                         return true;
                     }
                 }
@@ -190,6 +202,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     }
                 }
         );
+
     }
     public void onSearch(View view) {
 
@@ -214,32 +227,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     //-------------
-
-    // Implements TextToSpeech.OnInitListener
-    public void onInit(int status) {
-        if (status == TextToSpeech.SUCCESS) {
-            int result = tts.setLanguage(Locale.US);
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                Log.e("Error", "This Language is not supported");
-            } else {
-                addToSpeech("Please enter your to do list");
-            }
-        } else
-            Log.e("Error", "Failed");
-    }
-
     public void addToSpeech(String str) {
         tts.speak(str, TextToSpeech.QUEUE_FLUSH, null);
     }
 
- /*   protected void onPause() {
+    protected void onPause() {
         // shut down TextToSpeech
         if(tts != null){
             tts.stop();
             tts.shutdown();
         }
         super.onPause();
-    } */
+    }
 
     //Add option menu
     @Override
