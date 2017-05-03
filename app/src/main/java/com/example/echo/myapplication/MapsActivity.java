@@ -263,14 +263,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         EditText location_tf = (EditText) findViewById(R.id.searchET);
         String location = location_tf.getText().toString();
-<<<<<<< HEAD
-        //set text to speech content
-      //  String tospeech=("Searching parking spaces around"+location);
-        tts.speak(location, TextToSpeech.QUEUE_FLUSH, null);
-=======
-        String tospeach= ("searching parking spaces around"+location);
-        tts.speak(tospeach, TextToSpeech.QUEUE_FLUSH, null);
->>>>>>> origin/master
         List<android.location.Address> addressList = null;
         if (location != null || !location.equals("")) {
             Geocoder geocoder = new Geocoder(this);

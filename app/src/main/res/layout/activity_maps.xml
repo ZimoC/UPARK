@@ -47,11 +47,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:context="com.example.echo.myapplication.MapsActivity" />
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
-
             </LinearLayout>
 
             <!--  second tab -->
