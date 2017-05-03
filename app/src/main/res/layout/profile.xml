@@ -4,11 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-
-
-
-
     <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Henry Bentley "
@@ -20,7 +17,6 @@
         android:layout_marginTop="20dp"
         android:textStyle="normal|bold" />
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +27,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:textStyle="normal|bold" />
+
     <TextView
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bentley_Henry@bentley.edu"
@@ -41,6 +39,7 @@
         android:fontFamily="sans-serif"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,7 +50,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:textStyle="normal|bold" />
+
     <TextView
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="12345"
@@ -61,6 +62,7 @@
         android:fontFamily="sans-serif"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,7 +73,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:textStyle="normal|bold" />
+
     <TextView
+        android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(781) 891-2000"
@@ -81,30 +85,5 @@
         android:fontFamily="sans-serif"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Website"
-        android:textSize="20sp"
-        android:textColor="#13213a"
-        android:fontFamily="sans-serif"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:textStyle="normal|bold" />
-    <TextView
-        android:id="@+id/URL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="http://www.bentley.edu/"
-        android:textSize="20sp"
-        android:textColor="#13213a"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
-        android:onClick="onClick"
-        android:clickable="true"/>
-
-
 
 </LinearLayout>

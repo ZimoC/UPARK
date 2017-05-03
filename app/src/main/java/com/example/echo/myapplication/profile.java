@@ -10,17 +10,24 @@ package com.example.echo.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import static com.example.echo.myapplication.Login._email;
+import static com.example.echo.myapplication.Login._fname;
+import static com.example.echo.myapplication.Login._pass;
+import static com.example.echo.myapplication.Login._phone;
 
-public class profile extends Activity implements OnClickListener {
+
+public class profile extends Activity {
 
 
 
-    public TextView URL;
+    public TextView name1,phone1,email1,passwd1;
     /**
      * Called when the activity is first created.
      */
@@ -28,20 +35,15 @@ public class profile extends Activity implements OnClickListener {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.profile);
+        name1 = (TextView) findViewById(R.id.name);
+        phone1 = (TextView) findViewById(R.id.phone);
+        email1 = (TextView) findViewById(R.id.email);
+        passwd1 = (TextView) findViewById(R.id.password);
 
-        URL=(TextView)findViewById(R.id.URL) ;
-        URL.setOnClickListener(this);
-        // Set up click listeners for all the buttons
-
+        name1.setText(_fname);
+        phone1.setText(_phone);
+        email1.setText(_email);
+        passwd1.setText(_pass);
     }
 
-
-    // Perform action on click
-    //avoids runtime check for permission to CALL_PHONE
-    public void onClick(View v) throws SecurityException {
-        Intent i1 = new Intent(this,WebLookup.class);
-        startActivity(i1);
-       // WebLookup.loadUrl("http://www.bentley.edu/");
-
-    }
 }

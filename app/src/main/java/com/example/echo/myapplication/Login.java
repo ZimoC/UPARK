@@ -28,6 +28,7 @@ public class Login extends AppCompatActivity {
     Cursor cursor;
     private View mContentView;
     private View mLoadingView;
+    public static String _fname,_email,_phone,_pass;//to show in the profile
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,22 +62,24 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
 
                 String email = _txtemail.getText().toString();
-                String pass = _txtpass.getText().toString();
+                _pass = _txtpass.getText().toString();
 
-                cursor = db.rawQuery("SELECT *FROM "+SQLiteDBHelper.TABLE_NAME+" WHERE "+SQLiteDBHelper.COLUMN_EMAIL+"=? AND "+SQLiteDBHelper.COLUMN_PASSWORD+"=?",new String[] {email,pass});
+                cursor = db.rawQuery("SELECT *FROM "+SQLiteDBHelper.TABLE_NAME+" WHERE "+SQLiteDBHelper.COLUMN_EMAIL+"=? AND "+SQLiteDBHelper.COLUMN_PASSWORD+"=?",new String[] {email,_pass});
                 if (cursor != null) {
                     if(cursor.getCount() > 0) {
 
                         cursor.moveToFirst();
                         //Retrieving User FullName and Email after successfull login and passing to UserArea
-                        String _fname = cursor.getString(cursor.getColumnIndex(SQLiteDBHelper.COLUMN_FULLNAME));
-                        String _email= cursor.getString(cursor.getColumnIndex(SQLiteDBHelper.COLUMN_EMAIL));
+                        _fname = cursor.getString(cursor.getColumnIndex(SQLiteDBHelper.COLUMN_FULLNAME));
+                        _email= cursor.getString(cursor.getColumnIndex(SQLiteDBHelper.COLUMN_EMAIL));
+                        _phone= cursor.getString(cursor.getColumnIndex(SQLiteDBHelper.COLUMN_MOBILE));
                         Toast.makeText(Login.this, "Login Success", Toast.LENGTH_SHORT).show();
+
                         Intent intent = new Intent(Login.this,UserArea.class);
                         intent.putExtra("fullname",_fname);
                         intent.putExtra("email",_email);
-                        startActivity(intent);
 
+                        startActivity(intent);
                         //Removing MainActivity[Login Screen] from the stack for preventing back button press.
                         finish();
                     }

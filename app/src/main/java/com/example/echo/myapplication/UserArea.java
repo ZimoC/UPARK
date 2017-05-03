@@ -149,8 +149,8 @@ public class UserArea extends AppCompatActivity {
             case R.id.close:
                 final AlertDialog.Builder builder = new AlertDialog.Builder(UserArea.this);
                 builder.setTitle("Info");
-                builder.setMessage("Do you want to logout ??");
-                builder.setPositiveButton("Take me away!", new DialogInterface.OnClickListener() {
+                builder.setMessage("Do you want to logout ?");
+                builder.setPositiveButton("I am sure!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
