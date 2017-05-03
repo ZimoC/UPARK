@@ -169,7 +169,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
         );
     }
+    public void onSearch(View view) {
 
+        EditText location_tf = (EditText) findViewById(R.id.searchET);
+        String location = location_tf.getText().toString();
+        List<android.location.Address> addressList = null;
+        if (location != null || !location.equals("")) {
+            Geocoder geocoder = new Geocoder(this);
+            try {
+                addressList = geocoder.getFromLocationName(location, 1);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            android.location.Address address = addressList.get(0);
+            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+            //mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        }
+    }
 
     //-------------
 
