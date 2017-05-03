@@ -21,6 +21,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
@@ -119,6 +120,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
 
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                switch (position) {
+                    case 0:
+                        Intent newActivity1 = new Intent(MapsActivity.this, space1.class);
+                        startActivity(newActivity1);
+                        break;
+                    case 1:
+                        Intent newActivity2 = new Intent(MapsActivity.this, space2.class);
+                        startActivity(newActivity2);
+                        break;
+                /*    case 2:
+                        Intent newActivity3 = new Intent(MapsActivity.this, olympiakos.class);
+                        startActivity(newActivity3);
+                        break;*/
+                }
+            }
+
+        });
     }
 
 
