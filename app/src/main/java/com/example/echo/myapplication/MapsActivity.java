@@ -49,6 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final LatLng p1 = new LatLng(42.384802, -71.218219);
     private static final LatLng p2 = new LatLng(42.386396, -71.225954);
     private static final LatLng p3 = new LatLng(42.366146, -71.228616);
+    private static final LatLng p4 = new LatLng(42.352055, -71.173902);
 
     private static final String addr = "175 Forest Street, Waltham, MA02452";
     private static final String addr1 = "1-99 Cedar Hill Ln, Waltham, MA02452";
@@ -133,14 +134,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         Intent newActivity2 = new Intent(MapsActivity.this, space2.class);
                         startActivity(newActivity2);
                         break;
-                /*    case 2:
+                    case 2:
                         Intent newActivity3 = new Intent(MapsActivity.this, space3.class);
                         startActivity(newActivity3);
                         break;
-                         case 3:
+                    case 3:
                         Intent newActivity4 = new Intent(MapsActivity.this, space4.class);
                         startActivity(newActivity4);
-                        break;*/
+                        break;
                 }
                 String words = adapter.getItem(position).toString();
 
@@ -163,7 +164,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(p2).title("").snippet(addr2));
 
         mMap.addMarker(new MarkerOptions().position(p3).title("").snippet(addr3));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(p3, zoom));
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(p4, zoom));
 
 
         mMap.setOnMarkerClickListener(
@@ -182,14 +184,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             Intent newActivity2 = new Intent(MapsActivity.this, space2.class);
                             startActivity(newActivity2);
                         }
-                    /*    if (snip.equals(addr2)) {
+                        if (snip.equals(addr2)) {
                             Intent newActivity1 = new Intent(MapsActivity.this, space3.class);
                             startActivity(newActivity1);
                         }
                         if (snip.equals(addr3)) {
                             Intent newActivity1 = new Intent(MapsActivity.this, space4.class);
                             startActivity(newActivity1);
-                        }*/
+                        }
                         return true;
                     }
                 }
