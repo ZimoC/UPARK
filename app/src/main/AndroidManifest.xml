@@ -30,7 +30,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBVObcYGiUpRMar29U5p0hvHcZ8K2b42pE" />
 
-        <activity android:name=".Login" >
+        <activity android:name=".MapsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,6 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UserArea"></activity>
-        <activity   android:name=".spaceInfo"></activity>
         <activity   android:name=".WebLookup"></activity>
         <activity   android:name=".profile"></activity>
 
