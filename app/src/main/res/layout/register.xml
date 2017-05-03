@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg">
+
+    <View
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:alpha="0.6"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtname_reg"
+        android:hint="Enter Full Name"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:drawablePadding="10dp"
+        android:textColorHint="#cccccc"
+        android:drawableLeft="@mipmap/contacts"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="180dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textColorHint="#cccccc"
+        android:id="@+id/txtemail_reg"
+        android:hint="Enter Your Email"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@mipmap/email"
+        android:layout_below="@+id/txtname_reg"
+        android:layout_alignLeft="@+id/txtname_reg"
+        android:layout_alignStart="@+id/txtname_reg"
+        android:layout_alignRight="@+id/txtname_reg"
+        android:layout_alignEnd="@+id/txtname_reg" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/txtpass_reg"
+        android:hint="Enter Your Password"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textColorHint="#cccccc"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@mipmap/key"
+        android:layout_below="@+id/txtemail_reg"
+        android:layout_alignLeft="@+id/txtemail_reg"
+        android:layout_alignStart="@+id/txtemail_reg"
+        android:layout_alignRight="@+id/txtemail_reg"
+        android:layout_alignEnd="@+id/txtemail_reg" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtmobile_reg"
+        android:hint="Enter Your Mobile"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textColorHint="#cccccc"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@mipmap/phone"
+        android:layout_below="@+id/txtpass_reg"
+        android:layout_alignLeft="@+id/txtpass_reg"
+        android:layout_alignStart="@+id/txtpass_reg"
+        android:layout_alignRight="@+id/txtpass_reg"
+        android:layout_alignEnd="@+id/txtpass_reg" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/btn_reg"
+        android:textColor="#4286f4"
+        android:background="@drawable/button"
+        android:layout_below="@+id/txtmobile_reg"
+        android:layout_alignLeft="@+id/txtmobile_reg"
+        android:layout_alignStart="@+id/txtmobile_reg"
+        android:layout_marginTop="30dp"
+        android:layout_alignRight="@+id/txtmobile_reg"
+        android:layout_alignEnd="@+id/txtmobile_reg" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Create Account"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:id="@+id/txt_success_name"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="63dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="After clicking the Register Button. You will be redirected to Login Screen"
+        android:id="@+id/textView6"
+        android:textColor="#ffffff"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/txt_success_name"
+        android:layout_alignRight="@+id/txtname_reg"
+        android:layout_alignEnd="@+id/txtname_reg"
+        android:layout_alignLeft="@+id/txtname_reg"
+        android:layout_alignStart="@+id/txtname_reg" />
+</RelativeLayout>
