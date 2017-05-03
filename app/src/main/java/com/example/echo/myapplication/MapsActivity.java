@@ -115,18 +115,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (int i = 0; i < addList.length; ++i) {
             list.add(addList[i]);
         }
-        ArrayAdapter adapter = new ArrayAdapter(this,
+        final ArrayAdapter adapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
 
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
-                String item = (String) parent.getItemAtPosition(position);
-            }
-        });
     }
 
 
@@ -136,11 +128,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.addMarker(new MarkerOptions().position(p).title("Bentley University").snippet(addr));
 
-        mMap.addMarker(new MarkerOptions().position(p1).snippet(addr1));
+        mMap.addMarker(new MarkerOptions().position(p1).title("").snippet(addr1));
 
-        mMap.addMarker(new MarkerOptions().position(p2).snippet(addr2));
+        mMap.addMarker(new MarkerOptions().position(p2).title("").snippet(addr2));
 
-        mMap.addMarker(new MarkerOptions().position(p3).snippet(addr3));
+        mMap.addMarker(new MarkerOptions().position(p3).title("").snippet(addr3));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(p3, zoom));
 
 
