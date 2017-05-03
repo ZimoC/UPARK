@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bentley University"
+        android:textSize="25sp"
+        android:textColor="#13213a"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="175 Forest St, Waltham, MA 02452"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:onClick="onClick"
+        android:clickable="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Owner"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Henry Bentley"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bentley.henry@bentley.edu"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(781) 891-2000"
+        android:textSize="18sp"
+        android:textColor="#13213a"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp" />
+
+
+    <Button
+        android:id="@+id/map"
+        style="@style/demoStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" show On map" />
+    <Button
+        android:id="@+id/dial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/demoStyle"
+        android:text="Dial" />
+
+</LinearLayout>
