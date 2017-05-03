@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:UPARK0502-map="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/profile"
-        android:title="profile"
+        android:title="Profile"
         />
     <item android:id="@+id/feedback"
-        android:title="feedback"
+        android:title="Feedback"
         />
 
     <item android:id="@+id/close"
-    android:title="Close App"
+    android:title="Log out"
     />
 </menu>

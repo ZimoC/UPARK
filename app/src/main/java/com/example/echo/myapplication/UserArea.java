@@ -30,9 +30,9 @@ public class UserArea extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirmation);
 
-        //To hide AppBar for fullscreen.
+        //To show AppBar for optionmenu.
         ActionBar ab = getSupportActionBar();
-        ab.hide();
+        ab.show();
 
         TextView txtname = (TextView) findViewById(R.id.txt_success_name);
         TextView txtemail = (TextView) findViewById(R.id.txt_success_email);
@@ -52,31 +52,7 @@ public class UserArea extends AppCompatActivity {
 
                 Intent intent = new Intent(UserArea.this,MapsActivity.class);
                 startActivity(intent);
-//                final AlertDialog.Builder builder = new AlertDialog.Builder(UserArea.this);
-//                builder.setTitle("Info");
-//                builder.setMessage("Do you want to logout ??");
-//                builder.setPositiveButton("Take me away!", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                        Intent intent = new Intent(UserArea.this,Login.class);
-//                        startActivity(intent);
-//
-//                        finish();
-//
-//                    }
-//                });
-//
-//                builder.setNegativeButton("Not now", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                        dialogInterface.dismiss();
-//                    }
-//                });
-//
-//                AlertDialog dialog = builder.create();
-//                dialog.show();
+
             }
         });
 
@@ -171,8 +147,31 @@ public class UserArea extends AppCompatActivity {
                 return true;
 
             case R.id.close:
+                final AlertDialog.Builder builder = new AlertDialog.Builder(UserArea.this);
+                builder.setTitle("Info");
+                builder.setMessage("Do you want to logout ??");
+                builder.setPositiveButton("Take me away!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                finish();
+                        Intent intent = new Intent(UserArea.this,Login.class);
+                        startActivity(intent);
+
+                        finish();
+
+                    }
+                });
+
+                builder.setNegativeButton("Not now", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
                 return true;
 
             default:

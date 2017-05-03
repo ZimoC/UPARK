@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.location.Geocoder;
@@ -15,8 +16,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,7 +53,7 @@ import java.util.Locale;
 import android.speech.tts.TextToSpeech;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -94,6 +98,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        //To show AppBar for optionmenu.
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.show();
 
         tabs = (TabHost) findViewById(R.id.tabhost);
         tabs.setup();
@@ -303,15 +311,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //Add option menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-
-
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Uri uri;
         // Handle item selection
         switch (item.getItemId()) {
 
@@ -328,8 +334,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return true;
 
             case R.id.close:
+                final AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+                builder.setTitle("Info");
+                builder.setMessage("Do you want to logout ??");
+                builder.setPositiveButton("Take me away!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                finish();
+                        Intent intent = new Intent(MapsActivity.this,Login.class);
+                        startActivity(intent);
+
+                        finish();
+
+                    }
+                });
+
+                builder.setNegativeButton("Not now", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
                 return true;
 
             default:
