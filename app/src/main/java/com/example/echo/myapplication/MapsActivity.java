@@ -267,7 +267,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         EditText location_tf = (EditText) findViewById(R.id.searchET);
         String location = location_tf.getText().toString();
-        tts.speak(location, TextToSpeech.QUEUE_FLUSH, null);
+        String tospeach= ("searching parking spaces around"+location);
+        tts.speak(tospeach, TextToSpeech.QUEUE_FLUSH, null);
         List<android.location.Address> addressList = null;
         if (location != null || !location.equals("")) {
             Geocoder geocoder = new Geocoder(this);
@@ -289,7 +290,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    // on destroy
+    // on destroy Text to Speech engine
     public void onDestroy(){
         // shut down TTS engine
         super.onDestroy();
